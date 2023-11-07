@@ -32,12 +32,13 @@ requirements:
     - astropy
     - healpy
     - halotools
-    - galsampler
+    - lsstdesc-galsampler
     - psutil
     - diffmah
     - diffstar
     - dsps
     - galsim
+    - lsstdesc-gcr-catalogs
 
 test:
   imports:
