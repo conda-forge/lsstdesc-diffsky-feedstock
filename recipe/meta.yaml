@@ -1,5 +1,5 @@
 {% set name = "lsstdesc-diffsky" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lsstdesc_diffsky-{{ version }}.tar.gz
-  sha256: 09c49895eb48ee5142c6cfaded36f5f6ddfaa98997f7235c7d284a6817c7dc38
+  sha256: 299e761ff2ea097e0e7e9a2d3b4c09e92c1a51bde49423b4a04d97f82e008369
 
 build:
   noarch: python
@@ -25,19 +25,29 @@ requirements:
     - python >=3.9
     - numpy
     - jax
+    - numba
+    - mpi4py
+    - scipy
     - h5py
+    - astropy
+    - healpy
+    - halotools
+    - lsstdesc-galsampler
+    - psutil
     - diffmah
     - diffstar
     - dsps
-    - diffsky
+    - galsim
+    - lsstdesc-gcr-catalogs
 
 test:
   imports:
     - lsstdesc_diffsky
-  commands:
-    - pip check
-  requires:
-    - pip
+  # commands:
+  #   # fails with "halotools 0.8.2 requires cython, which is not installed." so commented out
+  #   - pip check
+  # requires:
+  #   - pip
 
 about:
   home: https://github.com/LSSTDESC/lsstdesc-diffsky
