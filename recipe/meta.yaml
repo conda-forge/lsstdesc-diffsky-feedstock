@@ -25,11 +25,19 @@ requirements:
     - python >=3.9
     - numpy
     - jax
+    - numba
+    - mpi4py
+    - scipy
     - h5py
+    - astropy
+    - healpy
+    - halotools
+    - galsampler
+    - psutil
     - diffmah
     - diffstar
     - dsps
-    - diffsky
+    - galsim
 
 test:
   imports:
