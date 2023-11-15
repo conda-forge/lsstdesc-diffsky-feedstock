@@ -1,5 +1,5 @@
 {% set name = "lsstdesc-diffsky" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lsstdesc_diffsky-{{ version }}.tar.gz
-  sha256: 299e761ff2ea097e0e7e9a2d3b4c09e92c1a51bde49423b4a04d97f82e008369
+  sha256: f1ed6dcd155ee66be800d1ef1acf4312f755621b32fad0c8c70c0970df3e7c1f
 
 build:
   noarch: python
