@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -29,7 +29,7 @@ requirements:
     - mpi4py
     - scipy
     - h5py
-    - astropy
+    - astropy-base
     - healpy
     - halotools
     - lsstdesc-galsampler
