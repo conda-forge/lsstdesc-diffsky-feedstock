@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lsstdesc_diffsky-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lsstdesc_diffsky-{{ version }}.tar.gz
   sha256: f1ed6dcd155ee66be800d1ef1acf4312f755621b32fad0c8c70c0970df3e7c1f
 
 build:
@@ -16,13 +16,13 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=45
     - setuptools-scm >=7
     - tomli >=1.0.0
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - numpy
     - jax
     - numba
@@ -43,6 +43,8 @@ requirements:
 test:
   imports:
     - lsstdesc_diffsky
+  requires:
+    - python {{ python_min }}
   # commands:
   #   # fails with "halotools 0.8.2 requires cython, which is not installed." so commented out
   #   - pip check
